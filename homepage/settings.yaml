@@ -1,0 +1,16 @@
+title: Nic's HomeLab
+description: Routing page of Nic's HomeLab - local preview, services not deployed
+startUrl: /
+layout:
+  admin:
+    style: row
+    columns: 1
+  apps:
+    style: row
+    columns: 1
+  docs:
+    style: row
+    columns: 1
+  dev:
+    style: row
+    columns: 1
