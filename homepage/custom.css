@@ -1,0 +1,47 @@
+/* Catppuccin Frappé: https://catppuccin.com/palette/
+ * Color overrides only. Layout, spacing, typography and widgets stay native.
+ * Homepage sets palette variables inline, hence the scoped !important values.
+ */
+:root,
+body,
+.dark {
+  --color-50: 198 208 245 !important;  /* text */
+  --color-100: 198 208 245 !important; /* text */
+  --color-200: 198 208 245 !important; /* text */
+  --color-300: 181 191 226 !important; /* subtext1 */
+  --color-400: 165 173 206 !important; /* subtext0 */
+  --color-500: 131 139 167 !important; /* overlay1 */
+  --color-600: 98 104 128 !important;  /* surface2 */
+  --color-700: 65 69 89 !important;    /* surface0 */
+  --color-800: 48 52 70 !important;    /* base */
+  --color-900: 41 44 60 !important;    /* mantle */
+  --bg-color: 48 52 70 !important;
+  --color-logo-start: 140 170 238 !important;
+  --color-logo-stop: 186 187 241 !important;
+}
+
+.service-card {
+  background-color: #414559 !important;
+  color: #c6d0f5 !important;
+}
+
+.service-card:hover {
+  background-color: #51576d !important;
+}
+
+.service-group-name {
+  color: #babbf1 !important;
+}
+
+.service-description {
+  color: #a5adce !important;
+}
+
+:focus-visible {
+  outline-color: #babbf1;
+}
+
+::selection {
+  background-color: #babbf1;
+  color: #232634;
+}

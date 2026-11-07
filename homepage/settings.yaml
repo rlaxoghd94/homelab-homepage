@@ -1,16 +1,19 @@
 title: Nic's HomeLab
 description: Direct links to Nic's HomeLab services
 startUrl: /
+theme: dark
+# Frappé colors are supplied by custom.css; slate is the supported fallback.
+color: slate
+headerStyle: clean
+useEqualHeights: true
+disableCollapse: true
+hideVersion: true
 layout:
   admin:
-    style: row
-    columns: 1
+    style: column
   apps:
-    style: row
-    columns: 1
+    style: column
   docs:
-    style: row
-    columns: 1
+    style: column
   dev:
-    style: row
-    columns: 1
+    style: column
