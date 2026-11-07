@@ -1,20 +1,18 @@
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:latest
-    volumes:
-      # Homepage may create supporting config files here on first start.
-      - ./homepage:/app/config
+    image: proxmox-homepage/homepage:local
+    build:
+      context: ./homepage
     environment:
-      HOMEPAGE_ALLOWED_HOSTS: "localhost:${HTTP_PORT:-8080},127.0.0.1:${HTTP_PORT:-8080}"
-      HOMEPAGE_VAR_HTTP_PORT: "${HTTP_PORT:-8080}"
+      HOMEPAGE_ALLOWED_HOSTS: "homepage.vm.nic.lan,homepage.vm.nic.lan:${HTTP_PORT:-80},localhost,localhost:${HTTP_PORT:-80},127.0.0.1,127.0.0.1:${HTTP_PORT:-80}"
       LOG_TARGETS: stdout
 
   nginx:
-    image: nginx:stable-alpine
+    image: proxmox-homepage/nginx:local
+    build:
+      context: ./nginx
     depends_on:
       - homepage
     ports:
-      # Local MVP only: not published on LAN/public interfaces.
-      - "127.0.0.1:${HTTP_PORT:-8080}:80"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # Dashboard ingress only; service cards link directly to their own hosts.
+      - "0.0.0.0:${HTTP_PORT:-80}:80"

@@ -1,21 +1,21 @@
-# Reserved .invalid names are placeholders for future Nginx service hosts.
-# No DNS records, VM endpoints, credentials or API widgets are configured.
+# Cards open services directly in the browser, not through the dashboard proxy.
+# Each DNS name must resolve to its own service host. No API widgets configured.
 - admin:
-    - Proxmox (placeholder):
-        href: "http://proxmox.home.invalid:{{HOMEPAGE_VAR_HTTP_PORT}}/"
-        description: "NOT DEPLOYED - Proxmox VM address and internal hostname required."
+    - Proxmox:
+        href: "https://proxmox.nic.lan:8006/"
+        description: "Proxmox management UI"
 
 - apps:
-    - No apps configured:
-        # Deliberately no href: this is an empty-state card, not a deployed app.
-        description: "NOT DEPLOYED - No application services configured yet."
+    - The News:
+        href: "http://the-news.vm.nic.lan/"
+        description: "The News web UI"
 
 - docs:
     - Paperless (placeholder):
-        href: "http://paperless.home.invalid:{{HOMEPAGE_VAR_HTTP_PORT}}/"
-        description: "NOT DEPLOYED - Paperless VM address and internal hostname required."
+        # Direct host: paperless.vm.nic.lan; add href once scheme/port are confirmed.
+        description: "NOT CONFIGURED - direct service URL required."
 
 - dev:
     - Hermes Dashboard (placeholder):
-        href: "http://hermes.home.invalid:{{HOMEPAGE_VAR_HTTP_PORT}}/"
-        description: "NOT DEPLOYED - Hermes Dashboard on the future Discord VM; address and hostname required."
+        # Direct host: hermes.vm.nic.lan; add href once scheme/port are confirmed.
+        description: "NOT CONFIGURED - direct Dashboard URL on the Discord VM required."

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Compatibility launcher: use the same local-only stack as the README.
+# Compatibility launcher: use the same dashboard Compose stack.
 set -eu
 cd "$(dirname "$0")"
 if [ "$#" -eq 0 ]; then
