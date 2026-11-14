@@ -13,6 +13,10 @@ layout:
     style: column
   apps:
     style: column
+    The News:
+      style: column
+      useEqualHeights: false
+      icon: "mdi-newspaper-variant-outline-#8caaee"
   docs:
     style: column
   dev:

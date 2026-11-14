@@ -1,5 +1,5 @@
 /* Catppuccin Frappé: https://catppuccin.com/palette/
- * Color overrides only. Layout, spacing, typography and widgets stay native.
+ * Native layout everywhere except the explicitly scoped The News parent card.
  * Homepage sets palette variables inline, hence the scoped !important values.
  */
 :root,
@@ -44,4 +44,53 @@ body,
 ::selection {
   background-color: #babbf1;
   color: #232634;
+}
+
+/* Keep native group/link semantics, but present The News as one parent card.
+ * Stable service ids scope this exception; other groups/cards are untouched.
+ * :has() requires a modern browser (Chrome/Edge 105+, Safari 15.4+, Firefox 121+).
+ */
+.services-group.subgroup:has(#the-news-wordpress) {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #51576d;
+  border-radius: 0.75rem;
+  background-color: #414559;
+}
+
+.services-group.subgroup:has(#the-news-wordpress) > button {
+  margin-bottom: 0.75rem;
+}
+
+.services-group.subgroup:has(#the-news-wordpress) .service-group-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #c6d0f5 !important;
+}
+
+.services-group.subgroup:has(#the-news-wordpress) .services-list {
+  margin-top: 0;
+  gap: 0.5rem;
+}
+
+.services-group.subgroup:has(#the-news-wordpress) .service-card {
+  height: auto;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  background-color: #292c3c !important;
+}
+
+.services-group.subgroup:has(#the-news-wordpress) .service-card:hover {
+  border-color: #626880;
+  background-color: #303446 !important;
+}
+
+.services-group.subgroup:has(#the-news-wordpress) .service-card:focus-within {
+  border-color: #babbf1;
+  outline: 2px solid #babbf1;
+  /* Inset keeps the focus ring visible inside the native overflow-hidden panel. */
+  outline-offset: -2px;
 }

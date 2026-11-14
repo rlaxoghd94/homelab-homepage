@@ -8,9 +8,16 @@
 
 - apps:
     - The News:
-        icon: "mdi-newspaper-variant-outline-#8caaee"
-        href: "http://the-news.vm.nic.lan/"
-        description: "뉴스 피드"
+        - WordPress:
+            id: the-news-wordpress
+            icon: "si-wordpress-#8caaee"
+            href: "http://the-news.vm.nic.lan"
+            description: "뉴스 사이트"
+        - Hermes Dashboard:
+            id: the-news-hermes
+            icon: "mdi-console-#ca9ee6"
+            href: "http://the-news.vm.nic.lan:9119"
+            description: "The News 운영 대시보드"
 
 - docs:
     - Paperless:
